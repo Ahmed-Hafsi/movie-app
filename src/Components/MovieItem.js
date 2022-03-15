@@ -1,5 +1,5 @@
 import ReactStars from "react-rating-stars-component";
-
+import { Link } from "react-router-dom";
 const MovieItem = ({ filtredMovies }) => {
   return (
     <div
@@ -11,6 +11,7 @@ const MovieItem = ({ filtredMovies }) => {
     >
       {filtredMovies.map((movie) => {
         return (
+          <Link to={`/MovieDescription/${movie.id}`}>
           <div
             key={movie.id}
             style={{
@@ -35,6 +36,7 @@ const MovieItem = ({ filtredMovies }) => {
             />
             <br /> <br />
           </div>
+          </Link>
         );
       })}
     </div>
